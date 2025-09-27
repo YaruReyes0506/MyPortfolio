@@ -1,0 +1,83 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-300 text-gray-800">
+
+    <header class="bg-white shadow-md">
+
+        <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center" >
+
+            <h1 class="text-2xl font-bold text-sam font-medium">Tienda de Zapatos</h1>
+
+            <ul class="flex gap-10" >
+                <li><a href="#" class="hover: text-blue-600">Inicio</a></li>
+                <li><a href="#" class="hover: text-blue-600">Categorías</a></li>
+                <li><a href="#" class="hover: text-blue-600">Marcas</a></li>
+                <li><a href="#" class="hover: text-blue-600">Carrito</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <section class="max-w-6xl mx-auto px-6 py-8 gap-6">
+
+        <select class="px-4 py-2 border rounded-lg bg-white shadow-sm">
+            <option>Categorias</option>
+            {%for Categoria in categorias%}
+            <option>{{ Categoria }}</option>
+            {%endfor%}
+        </select>
+
+        <select class="px-4 py-2 border rounded-lg bg-white shadow-sm">
+            <option>marcas</option>
+            {%for marca in marcas%}
+            <option>{{ marca }}</option>
+            {%endfor%}
+        </select>
+    </section>
+
+    <main class="max-w-6xl mx-auto px-6 py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+        <article class=" bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden">
+            <img src="../static/img/tacones.jfif" alt="Zapatos" class="w-full h-60 objetc-cover">
+            <div class="p-6">
+                <h3 class="text-lg font-semibold mb-2">Tacones</h3>
+                <p class="text-sm text-gray-600 mb-4">Confort diario, suela antideslizante, disponibles en varias tallas.</p>
+                <p class="text-blue-600 font-bold mb-4">Precio: $150.000</p>
+                <button class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-900 transition">Añadir al carrito</button>
+            </div>
+        </article>
+
+        <article class=" bg-white rounded-2xl shadow hover:shadow:lg transition overflow-hidden">
+            <img src="../static/img/nike.png" alt="Zapatos" class="w-full h-60 objetc-cover">
+            <div class="p-6">
+                <h3 class="text-lg font-semibold mb-2">Zapatillas Nike</h3>
+                <p class="text-sm text-gray-600 mb-4">Confort diario, suela antideslizante, disponibles en varias tallas.</p>
+                <p class="text-blue-600 font-bold mb-4">Precio: $250.000</p>
+                <button class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-900 transition">Añadir al carrito</button>
+            </div>
+        </article>
+
+        <article class=" bg-white rounded-2xl shadow hover:shadow:lg transition overflow-hidden">
+            <img src="../static/img/jordan.webp" alt="Zapatos" class="w-full h-60 objetc-cover">
+            <div class="p-6">
+                <h3 class="text-lg font-semibold mb-2">Zapatillas Jordan</h3>
+                <p class="text-sm text-gray-600 mb-4">Confort diario, suela antideslizante, disponibles en varias tallas.</p>
+                <p class="text-blue-600 font-bold mb-4">Precio: $220.000</p>
+                <button class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-900 transition">Añadir al carrito</button>
+            </div>
+        </article>
+
+    </main>
+
+    <footer class="bg-white border-t mt-12">
+        <p class="max-w-6xl mx-auto p-6 text-center text-sm text-gray-500">Todos los derechos reservados- Tienda de zapatos &copy; </p>
+    </footer>
+</body>
+</html>

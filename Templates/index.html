@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{%block content%}
+
+        <h2 class="mayusculas">mis habilidades en diferentes programas</h2>
+        <div class="contenedor_habilidades">
+            {%for habilidad in habilidades%}
+            <section class="habilidad">
+                <h3>{{habilidad.habilidad}}</h3>
+    
+                <div class="contenedor_icono">
+                   <img src="{{url_for('static', filename='icons/'+ habilidad.icono + '.svg')}}" alt="icono {{habilidad.habilidad}}"> 
+                </div>
+                <div>
+                    <p class="p_habilidad"> {{habilidad.description}}</p>
+                </div>  
+                
+            </section>
+            {%endfor%}
+        </div>
+{% endblock %}

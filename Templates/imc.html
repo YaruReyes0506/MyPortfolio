@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+    <link rel="stylesheet" href="./static/css/style_1.css">
+</head>
+
+<body class="body_imc">
+    {%if formulario%}
+    <h1 style='padding: 15px; text-align: center; text-transform: uppercase;'>calcule su índice de masa corporal</h1>
+
+    <div class="formulario_imc">
+        <form action="" method="POST">
+            <div class="pregunta">
+                <input type="number" name="peso" min="0" max="300" 
+                placeholder="ingrese peso en kilogramos" style="width: 200px"
+                class="forms">   
+            </div>
+
+            <div class="pregunta">
+                <input type="number" step="any" name="altura" min="0" max="3" 
+            placeholder="Ingrese su estatura en metros" style="width: 200px"
+            class="forms">
+            </div>
+            
+            <div class="pregunta">
+                <input type="submit" value="calcular"
+            class="forms">
+            </div>
+        </form>
+    </div>
+    {%endif%}
+
+    {%if su_imc %}
+    <div class="imc">
+        <p class="parrafo_imc">
+            Su índice de masa corporal es de: {{imc}}
+        </p>
+    </div>
+    {%endif%}
+
+    {%if observaciones%}
+    <div class="recomendaciones">
+        <h2>Estado Fisico:</h2>
+        {%for observacion in observaciones[0]%}
+        <p>{{observacion}}</p>
+        {%endfor%}
+    </div>
+    <div class="recomendaciones">
+        <h2>Alimentacion recomendada:</h2>
+        {%for observacion in observaciones[1]%}
+        <p>{{observacion}}</p>
+        {%endfor%}
+    </div>
+
+    <div class="recomendaciones">
+        <h2>Ejercicio:</h2>
+        {%for observacion in observaciones[2]%}
+        <p>{{observacion}}</p>
+        {%endfor%}
+    </div>
+
+    <div class="recomendaciones">
+        <h2>Rutinas:</h2>
+        {%for observacion in observaciones[3]%}
+        <p>{{observacion}}</p>
+        {%endfor%}
+    </div>
+    {%endif%}
+</body>
+</html>
