@@ -13,7 +13,8 @@ def inicio():
 
 @app.route('/contacto')
 def contacto():
-    obtener_coneccion
+
+    obtener_coneccion()
     return render_template('contacto.html', contacto=True)
 
 @app.route('/contactar', methods=["POST"])
